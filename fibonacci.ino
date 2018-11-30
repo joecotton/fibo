@@ -323,7 +323,7 @@ void resetButtonValues()
 void displayCurrentTime()
 {
   DateTime now = rtc.now();  
-  setTime(now.hour()%12, now.minute()); 
+  setTime( now.hour()==0 ? 12 : now.hour()%12, now.minute()); 
 }
 
 void setTime(byte hours, byte minutes)
